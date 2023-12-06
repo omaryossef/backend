@@ -4,6 +4,16 @@
       "id": 1,
       "name": "Ford",
       "year": 2020
+    },
+    {
+      "id": 2,
+      "name": "BMV",
+      "year": 2022
+    },
+    {
+      "id": 3,
+      "name": "KIA",
+      "year": 2021
     }
   ]
 }
