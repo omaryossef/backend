@@ -22,14 +22,15 @@ const cars = [
 ];
 export const getAllCars = async (req, res) => {
   try {
-    if (process.env.NODE_ENV === "development") {
-      // await db.read();
-      // const allCars = db.data.cars;
-      const extandetCar = cars.map((car) => {
-        return { ...car, added: new Date().toLocaleString("de") };
-      });
-      res.status(200).json(extandetCar);
-    }
+    // if (process.env.NODE_ENV === "development") {
+    //   // await db.read();
+    //   // const allCars = db.data.cars;
+
+    // }
+    const extandetCar = cars.map((car) => {
+      return { ...car, added: new Date().toLocaleString("de") };
+    });
+    res.status(200).json(extandetCar);
   } catch (error) {
     res.status(500).send(error);
   }
