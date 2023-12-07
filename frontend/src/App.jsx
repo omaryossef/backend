@@ -19,7 +19,7 @@ function App() {
   console.log(cars);
   return (
     <>
-      <h1>Tolle Bücher</h1>
+      <h1>Tolle Autos</h1>
       <ul>
         {cars.map((car) => {
           return <li key={car.id}>{car.name}</li>;

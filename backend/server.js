@@ -6,12 +6,13 @@ const PORT = process.env.PORT;
 console.log(PORT);
 const app = express();
 app.use(express.json());
-if (process.env.NODE_ENV === "development") {
-  app.use(cors());
-} else {
-  // TODO: REnder URL eintragen
-  app.use(cors({ origin: "https://backend-cars-deployment.onrender.com" }));
-}
+app.use(cors());
+// if (process.env.NODE_ENV === "development") {
+//   app.use(cors());
+// } else {
+//   // TODO: REnder URL eintragen
+//   app.use(cors({ origin: "https://backend-cars-deployment.onrender.com" }));
+// }
 
 app.use("/cars", getAllCars);
 const server = app.listen(PORT, () => {
