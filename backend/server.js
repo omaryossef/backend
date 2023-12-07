@@ -11,7 +11,7 @@ if (process.env.NODE_ENV === "development") {
   app.use(cors());
 } else {
   // TODO: REnder URL eintragen
-  app.use(cors({ origin: "https://frontend-cars-deployment.onrender.com/" }));
+  app.use(cors({ origin: "https://frontend-cars-deployment.onrender.com" }));
 }
 
 app.use("/cars", getAllCars);

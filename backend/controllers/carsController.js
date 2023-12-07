@@ -22,7 +22,7 @@ const cars = [
 ];
 export const getAllCars = async (req, res) => {
   try {
-    if (process.env.NODE_ENV === "production") {
+    if (process.env.NODE_ENV === "development") {
       // await db.read();
       // const allCars = db.data.cars;
       const extandetCar = cars.map((car) => {
