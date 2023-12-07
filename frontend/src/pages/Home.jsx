@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import backendUrl from "/home/dci-student/Desktop/javaScript_training/backend/backend/frontend/config/config.js";
+import backendUrl from "../../config/config";
 
 function Home() {
   const [cars, setCars] = useState([]);
