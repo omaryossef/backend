@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import "dotenv/config";
-import { getAllCars } from "./controllers/carsController.js";
+import { addNewCar, getAllCars } from "./controllers/carsController.js";
 const PORT = process.env.PORT;
 console.log(PORT);
 const app = express();
@@ -14,7 +14,8 @@ if (process.env.NODE_ENV === "development") {
   app.use(cors({ origin: "https://frontend-cars-deployment.onrender.com" }));
 }
 
-app.use("/cars", getAllCars);
+app.route("/cars").get(getAllCars).post(addNewCar);
+// app.post("/cars", addNewCar);
 const server = app.listen(PORT, () => {
   console.log(`server läuft auf: http://localhost:${PORT} `);
 });
