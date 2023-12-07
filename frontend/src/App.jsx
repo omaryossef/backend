@@ -22,7 +22,12 @@ function App() {
       <h1>Tolle Autos</h1>
       <ul>
         {cars.map((car) => {
-          return <li key={car.id}>{car.name}</li>;
+          return (
+            <li key={car.id}>
+              {car.name}
+              ----- made: {car.year}{" "}
+            </li>
+          );
         })}
       </ul>
     </>
