@@ -19,7 +19,7 @@ function Home() {
       console.log(error);
     }
   };
-  handelDeleteClick(() => {
+  useEffect(() => {
     console.log("URL, die für fetch verwendet wird", backendUrl);
     // try catch wäre gut ;)
     const fetchCars = async () => {
