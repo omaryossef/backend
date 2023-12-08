@@ -1,16 +1,6 @@
 {
   "cars": [
     {
-      "id": 1,
-      "name": "Ford",
-      "year": 2020
-    },
-    {
-      "id": 2,
-      "name": "BMV",
-      "year": 2022
-    },
-    {
       "id": 3,
       "name": "KIA",
       "year": 2021
@@ -21,89 +11,9 @@
       "year": 2023
     },
     {
-      "id": "7",
-      "name": "sad",
-      "year": "4564"
-    },
-    {
-      "id": "7",
-      "name": "omar",
-      "year": "54645"
-    },
-    {
-      "id": "7",
-      "name": "sad",
+      "id": "6",
+      "name": "autooo",
       "year": "2001"
-    },
-    {
-      "id": "1000",
-      "name": "new car",
-      "year": "2024"
-    },
-    {
-      "id": "7",
-      "name": "df",
-      "year": "dsf"
-    },
-    {
-      "id": "7",
-      "name": "df",
-      "year": "dsf"
-    },
-    {
-      "id": "456",
-      "name": "df546",
-      "year": "4gbdsf"
-    },
-    {
-      "id": "313",
-      "name": "ghf",
-      "year": "yc"
-    },
-    {
-      "id": "313",
-      "name": "ghf",
-      "year": "yc"
-    },
-    {
-      "id": "7",
-      "name": "omar yossef",
-      "year": "dsf"
-    },
-    {
-      "id": "7",
-      "name": "omar yossef",
-      "year": "dsf"
-    },
-    {
-      "id": "1000",
-      "name": "dimi",
-      "year": "1000"
-    },
-    {
-      "id": "313",
-      "name": "asd",
-      "year": "sdddd"
-    },
-    {
-      "id": "313",
-      "name": "asd",
-      "year": "sdddd"
-    },
-    {
-      "id": "313",
-      "name": "asd",
-      "year": "sdddd"
-    },
-    {
-      "id": "00",
-      "name": "kjlj",
-      "year": "0000"
-    },
-    {
-      "id": "11",
-      "name": "sad",
-      "year": "4564"
     }
   ]
 }

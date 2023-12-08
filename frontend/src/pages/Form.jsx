@@ -3,45 +3,41 @@ import backendUrl from "../../config/config";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 function FormCars() {
-  const [dataAdded, setDataAdded] = useState(false);
-  const [Data, setFormData] = useState({
+  const [newData, setNewData] = useState({
     id: "",
     name: "",
     year: "",
   });
-  const handelChange = (e) => {
-    e.preventDefault();
+  const handleChange = (e) => {
+    // e.preventDefault();
     const { name, value } = e.target;
-    setFormData({ ...Data, [name]: value });
-    console.log(Data);
+    setNewData({ ...newData, [name]: value });
+    // console.log(newData);
   };
-  const handleSubmit = async (e) => {
+  const handelSubmit = async (e) => {
     e.preventDefault();
-    ///
+    const option = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newData),
+    };
     try {
-      const response = await fetch(`${backendUrl}/cars`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(Data),
-      });
-      console.log("response.ok", response.ok);
+      const response = await fetch(`${backendUrl}/cars`, option);
       if (response.ok) {
         const data = await response.text();
-        console.log("data", data);
-        setDataAdded(true);
+        console.log(data);
       } else {
-        throw new Error("response not ok ");
+        throw new Error("es gap ein Fehler");
       }
     } catch (error) {
       console.log(error);
     }
   };
-
   return (
     <Form
-      onSubmit={handleSubmit}
+      onSubmit={handelSubmit}
       style={{
         display: "flex",
         flexDirection: "column",
@@ -56,8 +52,8 @@ function FormCars() {
           type="text"
           placeholder="id"
           name="id"
-          value={Data.id}
-          onChange={handelChange}
+          value={newData.id}
+          onChange={handleChange}
         />
       </Form.Group>
       <Form.Group
@@ -73,8 +69,8 @@ function FormCars() {
           type="text"
           placeholder="Enter name"
           name="name"
-          value={Data.name}
-          onChange={handelChange}
+          value={newData.name}
+          onChange={handleChange}
         />
       </Form.Group>
 
@@ -84,14 +80,14 @@ function FormCars() {
           type="text"
           placeholder="year"
           name="year"
-          value={Data.year}
-          onChange={handelChange}
+          value={newData.year}
+          onChange={handleChange}
         />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicCheckbox">
         <Form.Check type="checkbox" label="Check me out" />
       </Form.Group>
-      {dataAdded && <p style={{ color: "red" }}> erfolgeich </p>}
+      {/* {dataAdded && <p style={{ color: "red" }}> erfolgeich </p>} */}
       <Button variant="primary" type="submit">
         Submit
       </Button>

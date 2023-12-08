@@ -58,3 +58,25 @@ export const addNewCar = async (req, res) => {
     res.status(500).send(error);
   }
 };
+
+export const deleteCar = async (req, res) => {
+  try {
+    const carId = Number(req.params.id);
+    await db.read();
+    const allCars = db.data.cars;
+    //
+    const carIndex = allCars.findIndex((car) => {
+      return car.id === carId;
+    });
+    allCars.splice(carIndex, 1);
+    await db.write();
+    res.status(200).send("car was deleted");
+    // if (carIndex !== -1) {
+    //   //
+    // } else {
+    //   res.status(400).send("car not found");
+    // }
+  } catch (error) {
+    res.status(500).send(error);
+  }
+};

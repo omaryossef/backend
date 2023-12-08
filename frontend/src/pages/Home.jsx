@@ -3,7 +3,23 @@ import backendUrl from "../../config/config";
 
 function Home() {
   const [cars, setCars] = useState([]);
-  useEffect(() => {
+
+  const handelDeleteClick = async (id) => {
+    try {
+      const response = await fetch(`${backendUrl}/cars/${id}`, {
+        method: "DELETE",
+      });
+      if (response.ok) {
+        console.log("car was deleted");
+      } else {
+        const data = await response.text();
+        console.log(data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  handelDeleteClick(() => {
     console.log("URL, die für fetch verwendet wird", backendUrl);
     // try catch wäre gut ;)
     const fetchCars = async () => {
@@ -24,7 +40,10 @@ function Home() {
           return (
             <li key={car.id}>
               {car.name}
-              ----- made: {car.year}{" "}
+              ----- made: {car.year}
+              <button onClick={() => handelDeleteClick(car.id)} key={car.id}>
+                del
+              </button>
             </li>
           );
         })}
